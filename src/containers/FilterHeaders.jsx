@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import { Checkbox, Grid, Label, Segment, Dropdown } from 'semantic-ui-react';
+
+import { selectChore } from '../actions/selectChore';
 
 const roomOptions = [
   { key: 1, text: '1', value: 1 },
@@ -59,7 +64,6 @@ export default class FilterHeaders extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Dropdown placeholder='Chores'
-                                  // renderLabel={renderLabel}
                                   multiple
                                   fluid
                                   selection
@@ -71,3 +75,15 @@ export default class FilterHeaders extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        houses: state.houses
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators( { selectChore: selectChore }, dispatch)
+}
+
+// export default connect(mapStateToProps, mapDispatchToProps)(HouseList);
