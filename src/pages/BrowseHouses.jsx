@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import HouseList from '../../containers/HouseList';
-import FilterHeaders from './FilterHeaders';
+import HouseList from '../containers/HouseList';
+import FilterHeaders from '../containers/FilterHeaders';
 
 
 export default class BrowseHouses extends Component {
@@ -12,7 +12,7 @@ export default class BrowseHouses extends Component {
         <Grid stackable padded columns={2}>
           <Grid.Column width={10}>
             <FilterHeaders />
-
+            <HouseList />
           </Grid.Column>
           <Grid.Column width={6}>
           </Grid.Column>
@@ -21,6 +21,3 @@ export default class BrowseHouses extends Component {
     )
   }
 }
-
-
-;

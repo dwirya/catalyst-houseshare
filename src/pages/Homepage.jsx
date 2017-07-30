@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import HousePreview from "../../containers/HousePreview.jsx";
-import BrowseHouses from '../../components/LandingSection';
+import HousePreview from "../containers/HousePreview.jsx";
+import BrowseHouses from '../components/LandingSection';
 
 // var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
