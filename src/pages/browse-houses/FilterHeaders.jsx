@@ -23,7 +23,7 @@ export default class FilterHeaders extends Component {
 
     render() {
         return(
-            <Grid centered padded columns={3}>
+            <Grid centered padded columns={4}>
                 <Grid.Row>
                     <Grid.Column>
                         <Dropdown placeholder='Number of rooms' 
@@ -44,6 +44,13 @@ export default class FilterHeaders extends Component {
                                   fluid 
                                   selection 
                                   options={locationOptions} 
+                        />
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Dropdown placeholder='Price range' 
+                                  fluid 
+                                  selection 
+                                  options={priceOptions} 
                         />
                     </Grid.Column>
                 </Grid.Row>

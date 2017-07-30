@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image, Label, Segment, Header } from 'semantic-ui-react';
+import { Grid, Card, Image, Label, Segment, Header, Icon } from 'semantic-ui-react';
 
 import House1 from '../media/Houses/11-Max-Avenue-St.jpg';
 
@@ -21,7 +21,9 @@ export default class HousePreview extends Component {
     return (
       <div style={ HouseCardStyle }>
         <Segment compact>
+          <Label attached='top'><Icon name='bath' size='huge' /></Label>
           <Label as='a' color='orange' ribbon='right'>1km away</Label>
+          
           <Card
             href="#"
             as={ Segment }
@@ -30,8 +32,11 @@ export default class HousePreview extends Component {
             description='A very comfy place near Frankston'
             extra={extra}>
           </Card>
-        </Segment>  
+        </Segment>
       </div>  
     )
   }
 }
+
+// <Label as='a' color='teal' ribbon='right'>$120 pw</Label>
+//           <Label as='a' color='red' ribbon='right'>Available now</Label>
