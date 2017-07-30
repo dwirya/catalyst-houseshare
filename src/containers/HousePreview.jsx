@@ -14,16 +14,16 @@ const HouseCardStyle = {
   margin: '1rem'
 }
 
-const extra = (
-  <div className='ui two buttons'>
-    <Label color='teal' tag>1km away from TAFE</Label>
-    <Label color='red' tag>Available now</Label>
-  </div>
-)
-
-
-
 export default class HousePreview extends Component {
+
+  getExtras(house) {
+    return (
+      <div className='ui two buttons'>
+        <Label color='teal' tag>{house.price}</Label>
+        <Label color='red' tag>Available {house.available}</Label>
+      </div>
+    )
+  }
 
   render() {
     return (
@@ -54,17 +54,13 @@ export default class HousePreview extends Component {
 
             href="#"
             as={ Segment }
-            image={ House1 }
-            header='11 Max Avenue St.'
-            description='A very comfy place near Frankston'
-            extra={extra}>
-          
+            image={ this.props.house.image }
+            header={this.props.house.address}
+            description={this.props.house.description}
+            extra={this.getExtras(this.props.house)}>
           </Card>
         </Segment>
       </div>
     )
   }
 }
-
-// <Label as='a' color='teal' ribbon='right'>$120 pw</Label>
-//           <Label as='a' color='red' ribbon='right'>Available now</Label>
