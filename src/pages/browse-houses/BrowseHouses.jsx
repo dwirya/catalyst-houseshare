@@ -12,7 +12,7 @@ export default class BrowseHouses extends Component {
         <Grid stackable padded columns={2}>
           <Grid.Column width={10}>
             <FilterHeaders />
-
+            <HouseList />
           </Grid.Column>
           <Grid.Column width={6}>
           </Grid.Column>
