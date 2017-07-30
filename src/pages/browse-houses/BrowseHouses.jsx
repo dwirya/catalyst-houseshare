@@ -19,7 +19,7 @@ export default class BrowseHouses extends Component {
               <Grid.Column>
                 <div style={ HousePreviewStyle }>
                   <HousePreview />
-                </div>  
+                </div>
               </Grid.Column>
               <Grid.Column>
                 <div style={ HousePreviewStyle }>
@@ -37,12 +37,12 @@ export default class BrowseHouses extends Component {
                 </div>
               </Grid.Column>
             </Grid>
-            
+
           </Grid.Column>
           <Grid.Column width={6}>
           </Grid.Column>
         </Grid>
-      </div>  
+      </div>
     )
   }
 }

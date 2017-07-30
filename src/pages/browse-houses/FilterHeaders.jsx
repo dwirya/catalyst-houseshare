@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Label, Segment, Dropdown } from 'semantic-ui-react';
+import { Checkbox, Grid, Label, Segment, Dropdown } from 'semantic-ui-react';
 
 const roomOptions = [
   { key: 1, text: '1', value: 1 },
@@ -9,7 +9,11 @@ const roomOptions = [
 ]
 
 const priceOptions = [
-
+  { key: 1, text: '20-50', value: '20-50' },
+  { key: 2, text: '51-70', value: '51-70' },
+  { key: 3, text: '71-100', value: '71-100' },
+  { key: 4, text: '101-150', value: '101-150' },
+  { key: 5, text: '151-200', value: '151-200' },
 ]
 
 const locationOptions = [
@@ -19,6 +23,13 @@ const locationOptions = [
   { key: 4, text: 'Sorrento', value: 'Sorrento' },
 ]
 
+const choreOptions = [
+  { key: 1, text: 'houseKeeping', value: 'houseKeeping' },
+  { key: 2, text: 'cleanDishes', value: 'cleanDishes' },
+  { key: 3, text: 'cleanToilets', value: 'cleanToilets' },
+  { key: 4, text: 'cooking', value: 'cooking' },
+]
+
 export default class FilterHeaders extends Component {
 
     render() {
@@ -26,31 +37,33 @@ export default class FilterHeaders extends Component {
             <Grid centered padded columns={4}>
                 <Grid.Row>
                     <Grid.Column>
-                        <Dropdown placeholder='Number of rooms' 
-                                  fluid 
-                                  selection 
-                                  options={roomOptions} 
+                        <Dropdown placeholder='Number of rooms'
+                                  fluid
+                                  selection
+                                  options={roomOptions}
                         />
                     </Grid.Column>
                     <Grid.Column>
-                        <Dropdown placeholder='Price range' 
-                                  fluid 
-                                  selection 
-                                  options={priceOptions} 
+                        <Dropdown placeholder='Price range'
+                                  fluid
+                                  selection
+                                  options={priceOptions}
                         />
                     </Grid.Column>
                     <Grid.Column>
-                        <Dropdown placeholder='Nearest town' 
-                                  fluid 
-                                  selection 
-                                  options={locationOptions} 
+                        <Dropdown placeholder='Nearest town'
+                                  fluid
+                                  selection
+                                  options={locationOptions}
                         />
                     </Grid.Column>
                     <Grid.Column>
-                        <Dropdown placeholder='Price range' 
-                                  fluid 
-                                  selection 
-                                  options={priceOptions} 
+                        <Dropdown placeholder='Chores'
+                                  // renderLabel={renderLabel}
+                                  multiple
+                                  fluid
+                                  selection
+                                  options={choreOptions}
                         />
                     </Grid.Column>
                 </Grid.Row>
