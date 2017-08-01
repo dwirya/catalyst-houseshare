@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import RootReducer from './reducers/rootReducer';
 
 import Homepage from './pages/home/Homepage';
-import BrowseHouses from './pages/browse-houses/BrowseHouses';
+import BrowseHouses from './pages/BrowseHouses';
 import HouseInfo from './pages/renter/HouseInfo';
 
 import registerServiceWorker from './registerServiceWorker';
