@@ -8,7 +8,7 @@ export default class HouseInfo extends Component {
   render() {
     return (
       <div>
-            <HouseDetail />
+        <HouseDetail />
       </div>
 
     )

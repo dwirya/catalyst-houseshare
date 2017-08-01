@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Header, Grid, Segment, Menu } from 'semantic-ui-react';
 
-import logo2 from '../../media/logo1.png';
+import logo2 from '../media/logo1.png';
 
 export default class NavigationHeader extends Component {
   state = { activeItem: 'closest' }
