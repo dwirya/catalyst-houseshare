@@ -9,8 +9,10 @@ export default class Home extends React.Component {
 
   render() {
       return(
-        <NavigationHeader />
-        <LandingSection />
+        <div>
+          <NavigationHeader />
+          <LandingSection />
+        </div>
       )
     }
   }

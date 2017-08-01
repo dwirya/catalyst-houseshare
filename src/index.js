@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Home from './pages/home/Home.jsx'
+import HomePage from './pages/home/Homepage.jsx'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<HomePage />, document.getElementById('root'));
 registerServiceWorker();

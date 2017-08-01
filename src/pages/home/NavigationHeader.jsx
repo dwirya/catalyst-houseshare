@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Header, Grid, Segment } from 'semantic-ui-react';
 
-import House1 from '../../media/Houses/11-Max-Avenue-St.jpg';
+// import House1 from '../../media/Houses/11-Max-Avenue-St.jpg';
 
 
 const Style = {
@@ -16,7 +16,7 @@ export default class NavigationHeader extends Component {
             <Grid padded columns={4}>
                 <Grid.Row>
                   <Grid.Column>
-                    <Image src={House1} size='small'/>
+                    {/* <Image src={House1} size='small'/> */}
                   </Grid.Column>
                   <Grid.Column>
                     <Header as='h2'>
