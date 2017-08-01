@@ -19,7 +19,7 @@ export default class NavigationHeader extends Component {
             header
             // name='testimonials'
             // active={activeItem === 'testimonials'}
-            onClick={this.handleItemClick}
+            // onClick={this.handleItemClick}
           >
             {/* Testimonials */}
           </Menu.Item>
