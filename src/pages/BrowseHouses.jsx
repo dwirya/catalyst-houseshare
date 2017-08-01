@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 
 import HouseList from '../containers/HouseList';
-<<<<<<< HEAD:src/pages/BrowseHouses.jsx
-import FilterHeaders from '../containers/FilterHeaders';
-=======
 import FilterHeaders from '../components/FilterHeaders';
->>>>>>> HouseDetailPage:src/pages/BrowseHouses.jsx
 
 
 export default class BrowseHouses extends Component {
