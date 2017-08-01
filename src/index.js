@@ -8,9 +8,15 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import RootReducer from './reducers/rootReducer';
 
+<<<<<<< HEAD
 import Homepage from './pages/Homepage';
 import BrowseHouses from './pages/BrowseHouses';
 import HouseInfo from './pages/HouseInfo';
+=======
+import Homepage from './pages/home/Homepage';
+import BrowseHouses from './pages/BrowseHouses';
+import HouseInfo from './pages/renter/HouseInfo';
+>>>>>>> HouseDetailPage
 
 import registerServiceWorker from './registerServiceWorker';
 
