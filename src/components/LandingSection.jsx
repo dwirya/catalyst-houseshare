@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
+import { Image, List, Table, Header, Grid, Divider, Segment } from 'semantic-ui-react';
 
-import SunrisePic from '../media/mornington-sunrise.jpg';
-
-const Style = {
-    backgroundImage: 'url(' + SunrisePic  + ')',
-    height: '35rem',
-    width: '100%',
-    
-}
+import SunsetPic from '../media/mornington-sunset.jpg';
 
 export default class LandingSection extends Component {
     render() {
         return (
-            <div style={Style}>
-            </div>
+          <div>
+            <Image src={SunsetPic} fluid/>
+          </div>
         )
     }
 }

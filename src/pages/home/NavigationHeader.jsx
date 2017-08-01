@@ -10,37 +10,37 @@ export default class NavigationHeader extends Component {
 
   render() {
       return(
-        <Menu secondary stackable widths={5}>
+        <Menu secondary stackable widths={4}>
           <Menu.Item>
             <Image src = {logo2} size = 'tiny' />
           </Menu.Item>
 
           <Menu.Item
             header
-            name='features'
-            // active={activeItem === 'features'}
+            // name='testimonials'
+            // active={activeItem === 'testimonials'}
             onClick={this.handleItemClick}
           >
-            Features
+            {/* Testimonials */}
           </Menu.Item>
 
           <Menu.Item
             header
-            name='testimonials'
-            // active={activeItem === 'testimonials'}
+            name='find-a-place'
+            // active={activeItem === 'find-a-place'}
             onClick={this.handleItemClick}
           >
-            Testimonials
+            Find A Place
           </Menu.Item>
 
-          <Menu.Item
+          {/* <Menu.Item
             header
             name='sign-in'
             // active={activeItem === 'sign-in'}
             onClick={this.handleItemClick}
           >
             Sign-in
-          </Menu.Item>
+          </Menu.Item> */}
 
           <Menu.Item
             header
