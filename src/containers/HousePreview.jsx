@@ -15,17 +15,21 @@ const HouseCardStyle = {
 }
 
 export default class HousePreview extends Component {
+  
 
-  getExtras(house) {
+  getExtras(price, availability) {
     return (
       <div className='ui two buttons'>
-        <Label color='teal' tag>{house.price}</Label>
-        <Label color='red' tag>Available {house.available}</Label>
+        <Label color='teal' tag><p>${price} pw</p></Label>
+        <Label color='red' tag>Available {availability}</Label>
       </div>
     )
   }
 
   render() {
+
+    const weeklyRate = this.props.house.price - this.props.concession;
+
     return (
       <div style={ HouseCardStyle }>
         <Segment compact>
@@ -45,7 +49,7 @@ export default class HousePreview extends Component {
           <br />
 
           <Label as='a' color='orange' ribbon='right'>
-            120pw
+            <p>${weeklyRate} pw</p>
           </Label>
 
 
@@ -57,7 +61,7 @@ export default class HousePreview extends Component {
             image={ this.props.house.image }
             header={this.props.house.address}
             description={this.props.house.description}
-            extra={this.getExtras(this.props.house)}>
+            extra={this.getExtras(weeklyRate, this.props.house.available)}>
           </Card>
         </Segment>
       </div>

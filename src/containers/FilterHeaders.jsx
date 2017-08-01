@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { Checkbox, Grid, Label, Segment, Dropdown } from 'semantic-ui-react';
 
-import { selectChore } from '../actions/selectChore';
+import { updateConcession } from '../actions/updateConcession';
 
 const roomOptions = [
   { key: 1, text: '1', value: 1 },
@@ -28,14 +28,27 @@ const locationOptions = [
   { key: 4, text: 'Sorrento', value: 'Sorrento' },
 ]
 
+export const HOUSEKEEPING = 'Housekeeping';
+export const CLEANING_DISHES = 'Cleaning dishes';
+export const CLEANING_TOILETS = 'Cleaning toilets';
+export const COOKING = 'Cooking';
+
 const choreOptions = [
-  { key: 1, text: 'houseKeeping', value: 'houseKeeping' },
-  { key: 2, text: 'cleanDishes', value: 'cleanDishes' },
-  { key: 3, text: 'cleanToilets', value: 'cleanToilets' },
-  { key: 4, text: 'cooking', value: 'cooking' },
+  { key: 1, text: HOUSEKEEPING, value: HOUSEKEEPING },
+  { key: 2, text: CLEANING_DISHES, value: CLEANING_DISHES },
+  { key: 3, text: CLEANING_TOILETS, value: CLEANING_TOILETS },
+  { key: 4, text: COOKING, value: COOKING, },
 ]
 
-export default class FilterHeaders extends Component {
+class FilterHeaders extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.handleConcession = this.handleConcession.bind(this);
+    }
+
+    handleConcession(event, { value }) {
+        this.props.updateConcession(value);
+    }
 
     render() {
         return(
@@ -68,6 +81,7 @@ export default class FilterHeaders extends Component {
                                   fluid
                                   selection
                                   options={choreOptions}
+                                  onChange={this.handleConcession}
                         />
                     </Grid.Column>
                 </Grid.Row>
@@ -83,7 +97,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators( { selectChore: selectChore }, dispatch)
+    return bindActionCreators( { updateConcession: updateConcession }, dispatch)
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(HouseList);
+export default connect(mapStateToProps, mapDispatchToProps)(FilterHeaders);

@@ -20,7 +20,7 @@ class HouseList extends Component {
             return (
                 <Grid.Column>
                     <div style={ HousePreviewStyle }>
-                    <HousePreview house={house} />
+                    <HousePreview house={house} concession={this.props.concession} />
                     </div>  
                 </Grid.Column>
             )
@@ -38,7 +38,8 @@ class HouseList extends Component {
 
 function mapStateToProps(state) {
     return {
-        houses: state.houses
+        houses: state.houses,
+        concession: state.concession
     }
 }
 

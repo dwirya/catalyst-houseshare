@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 
 import HouseList from '../containers/HouseList';
-import FilterHeaders from '../components/FilterHeaders';
+import FilterHeaders from '../containers/FilterHeaders';
 
 
 export default class BrowseHouses extends Component {
