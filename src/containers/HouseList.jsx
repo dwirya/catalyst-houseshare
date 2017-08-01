@@ -7,7 +7,6 @@ import { Grid } from 'semantic-ui-react';
 import HousePreview from './HousePreview';
 
 import { selectHouse } from '../actions/selectHouse';
-``
 
 
 const HousePreviewStyle = {
