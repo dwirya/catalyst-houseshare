@@ -8,8 +8,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import RootReducer from './reducers/rootReducer';
 
-import Homepage from './pages/Homepage';
-import BrowseHouses from './pages/BrowseHouses';
+import Homepage from './pages/home/Homepage';
+import BrowseHouses from './pages/browse-houses/BrowseHouses';
+import HouseInfo from './pages/renter/HouseInfo';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
@@ -20,6 +22,7 @@ ReactDOM.render(
             <div>
                 <Route exact path="/" component={ Homepage }/>
                 <Route path="/browse" component={ BrowseHouses }/>
+                <Route path="/detail" component={ HouseInfo }/>
             </div>
             </Router>
         </Provider>
