@@ -137,7 +137,7 @@ export default class HouseDetail extends Component {
                         </Table.Row>
                         <Table.Row>
                           <Table.Cell>
-                            <Image src={WashDishes} size='mini' />
+                            <Image src={Cooking} size='mini' />
                             Cooking
                           </Table.Cell>
                           <Table.Cell>
