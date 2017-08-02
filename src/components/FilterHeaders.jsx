@@ -24,10 +24,13 @@ const locationOptions = [
 ]
 
 const choreOptions = [
-  { key: 1, text: 'houseKeeping', value: 'houseKeeping' },
-  { key: 2, text: 'cleanDishes', value: 'cleanDishes' },
-  { key: 3, text: 'cleanToilets', value: 'cleanToilets' },
-  { key: 4, text: 'cooking', value: 'cooking' },
+  { key: 1, text: 'House Keeping', value: 'House Keeping' },
+  { key: 2, text: 'Clean Dishes', value: 'Clean Dishes' },
+  { key: 3, text: 'Clean Toilets', value: 'Clean Toilets' },
+  { key: 4, text: 'Cooking', value: 'Cooking' },
+  { key: 5, text: 'Buy Groceries', value: 'Buy Groceries' },
+  { key: 6, text: 'Do Laundry', value: 'Do Laundry' },
+  { key: 7, text: 'Gardening', value: 'Gardening' },
 ]
 
 export default class FilterHeaders extends Component {

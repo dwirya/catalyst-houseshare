@@ -29,10 +29,13 @@ const locationOptions = [
 ]
 
 const choreOptions = [
-  { key: 1, text: 'houseKeeping', value: 'houseKeeping' },
-  { key: 2, text: 'cleanDishes', value: 'cleanDishes' },
-  { key: 3, text: 'cleanToilets', value: 'cleanToilets' },
-  { key: 4, text: 'cooking', value: 'cooking' },
+  { key: 1, text: 'House Keeping', value: 'House Keeping' },
+  { key: 2, text: 'Clean Dishes', value: 'Clean Dishes' },
+  { key: 3, text: 'Clean Toilets', value: 'Clean Toilets' },
+  { key: 4, text: 'Cooking', value: 'Cooking' },
+  { key: 5, text: 'Buy Groceries', value: 'Buy Groceries' },
+  { key: 6, text: 'Do Laundry', value: 'Do Laundry' },
+  { key: 7, text: 'Gardening', value: 'Gardening' },
 ]
 
 export default class StudentRegisterDetail extends Component {
@@ -50,7 +53,7 @@ export default class StudentRegisterDetail extends Component {
           </Form.Group>
           <br/>
           <Form.Group widths='equal'>
-            <Form.Field control={Input} label='Date of birth' placeholder='Date of birth' />
+            <Form.Field control={Input} label='Date of birth' placeholder='DD/MM/YYYY' />
             <Form.Field control={Input} label='Email' placeholder='Email' />
             <Form.Field control={Input} label='Phone' placeholder='Phone' />
           </Form.Group>
@@ -63,19 +66,7 @@ export default class StudentRegisterDetail extends Component {
           <Form.Field control={Select} label='Number of Rooms' options={roomOptions} placeholder='Number of Rooms' />
           <Form.Field control={Select} multiple label='Location' options={locationOptions} placeholder='Location' />
           <Form.Field control={Select} multiple label='Chore' options={choreOptions} placeholder='Chore' />
-          <Form.Field control={Select} label='Price' options={priceOptions} placeholder='Price' />
-
-
-          {/* <Header as='small'>Location</Header>
-          <Dropdown
-            placeholder='Location'
-            fluid
-            selection
-            multiple
-            options={locationOptions}
-          />*/}
-
-
+          <Form.Field control={Select} label='Rent per week' options={priceOptions} placeholder='Rent per week' />
           <br/>
           <br/>
           <Button positive floated='left'>Confirm</Button>
