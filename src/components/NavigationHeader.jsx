@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { Image, Header, Grid, Segment, Menu } from 'semantic-ui-react';
+import { Image, Menu } from 'semantic-ui-react';
 
 import logo2 from '../media/logo1.png';
 

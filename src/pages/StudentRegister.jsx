@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Divider } from 'semantic-ui-react';
+import { Divider } from 'semantic-ui-react';
 
 import NavigationHeader from '../components/NavigationHeader';
 import StudentRegisterDetail from '../components/StudentRegisterDetail';

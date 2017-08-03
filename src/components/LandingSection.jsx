@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Image, List, Table, Header, Grid, Dropdown, Segment } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 
 import SunsetPic from '../media/mornington-sunset.jpg';
-
-const stateOptions = [ { key: 'AL', value: 'AL', text: 'Alabama' }  ];
 
 export default class LandingSection extends Component {
     render() {

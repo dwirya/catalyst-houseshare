@@ -1,4 +1,3 @@
-import House1 from '../media/Houses/11-Max-Avenue-St.jpg';
 
 import RosebudHouse1 from '../media/Houses/rosebudhouse1.jpg';
 import RosebudHouse2 from '../media/Houses/rosebudhouse2.jpg';

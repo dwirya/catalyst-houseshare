@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import { Container, Checkbox, Item, Icon, Image, Label, List, Table, Header, Grid, Divider, Segment } from 'semantic-ui-react';
+import { Container, Checkbox, Item, Image, Table, Header, Grid } from 'semantic-ui-react';
 
-import House1 from '../media/Houses/11-Max-Avenue-St.jpg';
+/*import House1 from '../media/Houses/11-Max-Avenue-St.jpg';*/
 import House2 from '../media/Houses/rosebudhouse1.jpg';
-import House3 from '../media/Houses/rosebudhouse2.jpg';
+/*import House3 from '../media/Houses/rosebudhouse2.jpg';
 import House4 from '../media/Houses/rosebudhouse3.jpg';
 import House5 from '../media/Houses/rosebudhouse4.jpg';
 import House6 from '../media/Houses/rosebudhouse5.jpg';
-import House7 from '../media/Houses/rosebudhouse6.jpg';
+import House7 from '../media/Houses/rosebudhouse6.jpg';*/
 
 
 import WashClothes from '../media/choreIcons/icons8-Clothes-50.png';
 import WashDishes from '../media/choreIcons/icons8-Dishwasher-50.png';
 import Housekeeping from '../media/choreIcons/icons8-Housekeeping-50.png';
-import Sterilization from '../media/choreIcons/icons8-Sterilization-50.png';
+// import Sterilization from '../media/choreIcons/icons8-Sterilization-50.png';
 import WashToilet from '../media/choreIcons/icons8-Toilet Paper-50.png';
-import VacuumHouse from '../media/choreIcons/icons8-Vacuum Cleaner-50.png';
+// import VacuumHouse from '../media/choreIcons/icons8-Vacuum Cleaner-50.png';
 
 import Bathroom from '../media/choreIcons/black-bathroom-icon.png';
 import Cooking from '../media/choreIcons/black-cooking-icon.png';
@@ -28,10 +28,10 @@ import Other from '../media/choreIcons/other-icon.png';
 
 
 
-var imageStyle = {
+/*var imageStyle = {
   marginLeft:  '3rem',
   marginRight:  '3rem',
-};
+};*/
 
 
 export default class HouseDetail extends Component {

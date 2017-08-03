@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Dropdown, Divider, Container, Button, Checkbox, Form, Input, Radio, Select, TextArea } from 'semantic-ui-react'
+import { Divider, Container, Button, Checkbox, Form, Input, Select, TextArea } from 'semantic-ui-react'
 
 const genderOptions = [
   { key: 'm', text: 'Male', value: 'male' },

@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Checkbox, Grid, Label, Segment, Dropdown } from 'semantic-ui-react';
+import { Grid, Dropdown } from 'semantic-ui-react';
 
 import { updateConcession } from '../actions/updateConcession';
 
-const roomOptions = [
+/*const roomOptions = [
   { key: 1, text: '1', value: 1 },
   { key: 2, text: '2', value: 2 },
   { key: 3, text: '3', value: 3 },
   { key: 4, text: '4', value: 4 },
-]
+]*/
 
 const priceOptions = [
   { key: 1, text: '20-50', value: '20-50' },

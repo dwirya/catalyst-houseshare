@@ -31,10 +31,13 @@ export default function(state=0, action) {
                         break;
                     default:
                         totalConcession += 0;
-                }
-                    
+                }   
             })
+        
             return totalConcession;
+
+        default:
+            /*Do nothing*/
     }
 
     return state;
