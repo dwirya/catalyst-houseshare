@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image, Label, Segment, Transition, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import WashClothes from '../media/choreIcons/icons8-Clothes-50.png';
 import WashDishes from '../media/choreIcons/icons8-Dishwasher-50.png';
@@ -49,7 +50,7 @@ export default class HousePreview extends Component {
     const { animation, duration, visible } = this.state
 
     return (
-      <div>
+      <Link to='/detail'>
         <Segment compact>
           <Label attached='top'>
 
@@ -73,16 +74,18 @@ export default class HousePreview extends Component {
             </Label>
           </Transition>
 
+        
           <Card
-            href="/detail"
+            href="#"
             as={ Segment }
             image={ this.props.house.image }
             header={this.props.house.address}
             description={this.props.house.description}
             extra={this.getExtras(this.props.house.available)}>
           </Card>
+        
         </Segment>
-      </div>
+      </Link>
     )
   }
 }
