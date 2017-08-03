@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Card, Image, Label, Segment, Header, Icon, Divider } from 'semantic-ui-react';
+import { Form, Grid, Card, Image, Label, 
+        Segment, Header, Icon, Divider,
+        Transition } from 'semantic-ui-react';
 
 import House1 from '../media/Houses/11-Max-Avenue-St.jpg';
 
@@ -23,8 +25,13 @@ const HouseCardStyle = {
   margin: '1rem'
 }
 
+const transitions = ['jiggle', 'flash', 'shake', 'pulse', 'tada', 'bounce'];
+
 export default class HousePreview extends Component {
   
+  state = { animation: 'tada', duration: 300, visible: true }
+
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
   getExtras(price, availability) {
     return (
@@ -38,6 +45,8 @@ export default class HousePreview extends Component {
   render() {
 
     const weeklyRate = this.props.house.price - this.props.concession;
+
+    const { animation, duration, visible } = this.state
 
     return (
       <div style={ HouseCardStyle }>
@@ -58,10 +67,11 @@ export default class HousePreview extends Component {
           <br />
           <br />
 
-          <Label as='a' color='orange' ribbon='right'>
-            <p>${weeklyRate} pw</p>
-          </Label>
-
+          <Transition animation={animation} duration={duration} visible={visible}>
+            <Label as='a' color='orange' ribbon='right'>
+              <p>${weeklyRate} pw</p>
+            </Label>
+          </Transition>
 
           <Card
             raised
@@ -73,6 +83,7 @@ export default class HousePreview extends Component {
             description={this.props.house.description}
             extra={this.getExtras(weeklyRate, this.props.house.available)}>
           </Card>
+          <Form.Button content='Run' onClick={this.toggleVisibility} />
         </Segment>
       </div>
     )
