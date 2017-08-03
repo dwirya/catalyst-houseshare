@@ -13,13 +13,12 @@ export default class BrowseHouses extends Component {
         <Container>
           <NavigationHeader />
           <Divider />
-          <Grid stackable padded columns={2}>
-            <Grid.Column width={10}>
+          <Grid stackable padded columns={1}>
+            <Grid.Column width={16}>
               <FilterHeaders />
               <HouseList />
             </Grid.Column>
-            <Grid.Column width={6}>
-            </Grid.Column>
+            
           </Grid>
         </Container>  
       </div>

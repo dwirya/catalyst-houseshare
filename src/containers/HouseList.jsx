@@ -25,7 +25,7 @@ class HouseList extends Component {
 
     render() {
         return (
-            <Grid doubling columns={2}>
+            <Grid doubling columns={3}>
               {this.renderList()}
             </Grid>
         )

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Image, Label, Segment, Transition } from 'semantic-ui-react';
+import { Card, Image, Label, Segment, Transition, Button } from 'semantic-ui-react';
 
 import WashClothes from '../media/choreIcons/icons8-Clothes-50.png';
 import WashDishes from '../media/choreIcons/icons8-Dishwasher-50.png';
@@ -28,6 +28,19 @@ export default class HousePreview extends Component {
 
   componentWillReceiveProps() {
     this.toggleVisibility();
+  }
+
+  getExtras(availability) {
+    return (
+      <Button 
+      label={{ basic: false, color: 'teal', pointing: 'right', content: 'Available ' + availability }} 
+      icon='heart' 
+      content='Message'
+      color='blue' 
+      labelPosition='left'
+      floated='right' 
+      />
+    )
   }
 
   render() {
@@ -61,14 +74,12 @@ export default class HousePreview extends Component {
           </Transition>
 
           <Card
-            raised
-
-            href="#"
+            href="/detail"
             as={ Segment }
             image={ this.props.house.image }
             header={this.props.house.address}
             description={this.props.house.description}
-            extra={<Label color='teal' tag>Available {this.props.house.available}</Label>}>
+            extra={this.getExtras(this.props.house.available)}>
           </Card>
         </Segment>
       </div>
