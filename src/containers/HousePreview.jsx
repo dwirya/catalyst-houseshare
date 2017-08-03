@@ -29,9 +29,13 @@ const transitions = ['jiggle', 'flash', 'shake', 'pulse', 'tada', 'bounce'];
 
 export default class HousePreview extends Component {
   
-  state = { animation: 'tada', duration: 300, visible: true }
+  state = { animation: 'tada', duration: 300, visible: true };
 
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+  toggleVisibility = () => this.setState({ visible: !this.state.visible });
+
+  componentWillReceiveProps() {
+    this.toggleVisibility();
+  }
 
   getExtras(price, availability) {
     return (
@@ -41,11 +45,9 @@ export default class HousePreview extends Component {
       </div>
     )
   }
-
+  
   render() {
-
     const weeklyRate = this.props.house.price - this.props.concession;
-
     const { animation, duration, visible } = this.state
 
     return (
