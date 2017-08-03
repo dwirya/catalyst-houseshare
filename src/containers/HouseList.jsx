@@ -9,17 +9,13 @@ import HousePreview from './HousePreview';
 import { selectHouse } from '../actions/selectHouse';
 
 
-const HousePreviewStyle = {
-  marginLeft: '3rem'
-}
-
 class HouseList extends Component {
 
     renderList() {
         return this.props.houses.map((house) => {
             return (
                 <Grid.Column>
-                    <div style={ HousePreviewStyle }>
+                    <div>
                     <HousePreview house={house} concession={this.props.concession} />
                     </div>  
                 </Grid.Column>

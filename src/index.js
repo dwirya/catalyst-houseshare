@@ -12,6 +12,9 @@ import Homepage from './pages/Homepage';
 import BrowseHouses from './pages/BrowseHouses';
 import HouseInfo from './pages/HouseInfo';
 
+import AddHouse from './pages/AddHouse';
+import StudentRegister from './pages/StudentRegister';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
@@ -23,6 +26,8 @@ ReactDOM.render(
                 <Route exact path="/" component={ Homepage }/>
                 <Route path="/browse" component={ BrowseHouses }/>
                 <Route path="/detail" component={ HouseInfo }/>
+                <Route path="/add" component={ AddHouse }/>
+                <Route path="/student" component={ StudentRegister }/>
             </div>
             </Router>
         </Provider>
