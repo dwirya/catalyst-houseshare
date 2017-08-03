@@ -85,7 +85,6 @@ export default class HousePreview extends Component {
             description={this.props.house.description}
             extra={this.getExtras(weeklyRate, this.props.house.available)}>
           </Card>
-          <Form.Button content='Run' onClick={this.toggleVisibility} />
         </Segment>
       </div>
     )
