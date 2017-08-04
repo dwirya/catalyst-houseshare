@@ -194,6 +194,10 @@ export default class HouseDetail extends Component {
               </Segment.Group> */}
             {/* </Grid.Column>
           </Grid> */}
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           </Container>
         )
     }
