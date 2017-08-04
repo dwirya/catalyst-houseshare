@@ -50,7 +50,6 @@ export default class HousePreview extends Component {
     const { animation, duration, visible } = this.state
 
     return (
-      <Link to='/detail'>
         <Segment compact>
           <Label attached='top'>
 
@@ -74,18 +73,16 @@ export default class HousePreview extends Component {
             </Label>
           </Transition>
 
-        
-          <Card
-            href="#"
-            as={ Segment }
-            image={ this.props.house.image }
-            header={this.props.house.address}
-            description={this.props.house.description}
-            extra={this.getExtras(this.props.house.available)}>
-          </Card>
-        
+          <Link to='/detail'>
+            <Card
+              as={ Segment }
+              image={ this.props.house.image }
+              header={this.props.house.address}
+              description={this.props.house.description}
+              extra={this.getExtras(this.props.house.available)}>
+            </Card>
+          </Link>
         </Segment>
-      </Link> 
     )
   }
 }

@@ -37,7 +37,7 @@ import Other from '../media/choreIcons/other-icon.png';
 export default class HouseDetail extends Component {
     render() {
         return (
-          <Container clearing>
+          <Container>
           {/* <Grid> */}
             {/* <Grid.Column> */}
               {/* <Segment.Group>
@@ -45,7 +45,7 @@ export default class HouseDetail extends Component {
                 <Segment> */}
                   <Header as='h1' floated='left'>Frankston</Header>
                 <br/>
-                  <Header as='h3' color='teal' size='s' floated='right'>2km away</Header>
+                  <Header as='h3' color='teal' floated='right'>2km away</Header>
                 {/* </Segment> */}
 
 
