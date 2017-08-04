@@ -1,4 +1,4 @@
-const HOUSE_SELECTED = 'HOUSE_SELECTED';
+export const HOUSE_SELECTED = 'HOUSE_SELECTED';
 
 export function selectHouse(house) {
     return {
