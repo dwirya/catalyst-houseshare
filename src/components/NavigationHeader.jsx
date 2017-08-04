@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { Image, Menu } from 'semantic-ui-react';
 
 import logo2 from '../media/logo1.png';
@@ -12,7 +11,7 @@ export default class NavigationHeader extends Component {
   render() {
 
     const { activeItem } = this.state
-    
+
       return(
         <Menu secondary stackable widths={5}>
           <Menu.Item>
@@ -26,7 +25,6 @@ export default class NavigationHeader extends Component {
             onClick={this.handleItemClick}
             href='/'
           >
-            {/* Home */}
             Home
           </Menu.Item>
 
@@ -40,7 +38,7 @@ export default class NavigationHeader extends Component {
             Find A Place
           </Menu.Item>
 
-          
+
           <Menu.Item
             header
             name='list-a-place'
@@ -50,16 +48,16 @@ export default class NavigationHeader extends Component {
           >
             List A Place
           </Menu.Item>
-          
+
 
           <Menu.Item
             header
-            name='sign-in'
-            active={activeItem === 'sign-in'}
+            name='sign-up'
+            active={activeItem === 'sign-up'}
             onClick={this.handleItemClick}
             href='/student'
           >
-            Sign-in
+            Sign-up
           </Menu.Item>
 
         </Menu>

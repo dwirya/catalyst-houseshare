@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider } from 'semantic-ui-react';
+import { Divider, Container } from 'semantic-ui-react';
 
 import NavigationHeader from '../components/NavigationHeader';
 import AddHouseDetail from '../components/AddHouseDetail';
@@ -9,9 +9,11 @@ export default class AddHouse extends Component {
   render() {
     return (
       <div>
-        <NavigationHeader />
-        <Divider />
-        <AddHouseDetail />
+        <Container>
+          <NavigationHeader />
+          <Divider />
+          <AddHouseDetail />
+        </Container>
       </div>
 
     )
