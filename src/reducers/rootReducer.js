@@ -8,7 +8,7 @@ import SelectedHouseReducer from './reducer_select_house.js';
 const rootReducer = combineReducers({
   houses: AllHousesReducer,
   concession: ConcessionReducer,
-  selectedHouse: SelectedHouseReducer
+  // selectedHouse: SelectedHouseReducer
 });
 
 export default rootReducer;

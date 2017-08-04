@@ -16,7 +16,8 @@ class HouseList extends Component {
             return (
                 <Grid.Column>
                     <div>
-                    <HousePreview house={house} concession={this.props.concession} />
+                    <HousePreview key={house.address} house={house} concession={this.props.concession} 
+                                onClick={this.props.selectHouse} />
                     </div>  
                 </Grid.Column>
             )
