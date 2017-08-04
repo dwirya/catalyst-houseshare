@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Divider, Container, Button, Checkbox, Form, Input, Select, TextArea } from 'semantic-ui-react';
 
+
+import axios from 'axios';
 // import House1 from '../media/Houses/11-Max-Avenue-St.jpg';
 // import House2 from '../media/Houses/rosebudhouse1.jpg';
 // import House3 from '../media/Houses/rosebudhouse2.jpg';
@@ -78,16 +82,119 @@ const choreOptions = [
 ]
 
 export default class AddHouseDetail extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      address: '',
+      description: '',
+      weeklyRate: 100,
+      availability: '',
+      previewPicture: '',
+      previewPictureURL: '',
+      acceptedChores: [],
+      uploadedFileCloudinaryUrl: ''
+    }
+  }
+
+  handleFirstName(event, { value }) {
+    this.setState({
+      firstName: value
+    });
+  }
+
+  handleLastName(event, { value }) {
+    this.setState({
+      lastName: value
+    });
+  }
+
+  handleAddress(event, { value }) {
+    this.setState({
+      address: value
+    })
+  }
+  handleDescription(event, { value }) {
+    this.setState({
+      description: value
+    })
+  }
+  handleWeeklyRate(event, { value }) {
+    this.setState({
+      weeklyRate: value
+    })
+  }
+  handleAvailability(event, { value }) {
+    this.setState({
+      availability: value
+    })
+  }
+
+  handleAcceptedChores(event, { value }) {
+    this.setState({
+      acceptedChores: value
+    })
+  }
+
+
+  handlePreviewPicture(event) {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    
+    reader.onloadend = () => {
+      this.setState({
+        previewPicture: file,
+        previewPictureURL: reader.result
+      });
+    }
+    reader.readAsDataURL(file);
+
+    // this.uploadImageToCloud(this.state.previewPicture);
+  }
+
+  uploadImageToCloud(file) {
+    const CLOUDINARY_UPLOAD_PRESET = 'cufx63cq';
+    const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dwthemenace/upload';
+
+    let upload = axios.post(CLOUDINARY_UPLOAD_URL, {
+      upload_preset: CLOUDINARY_UPLOAD_PRESET,
+      file: file
+    })
+
+    upload.then((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
+
+  submitForm(event) {
+    document.getElementById("ListingForm").submit();
+    event.preventDefault();
+    console.log(this.state.previewPicture);
+  }
+
   render() {
     return (
       <Container>
-        <Form>
+        <Form id="ListingForm" action="http://localhost:8000/api/house/add" method='POST'>
           <br/>
           <br/>
           <br/>
           <Form.Group widths='equal'>
-            <Form.Field control={Input} label='First name' placeholder='First name' />
-            <Form.Field control={Input} label='Last name' placeholder='Last name' />
+            <Form.Field control={Input} label='First name' placeholder='First name' 
+                        value={this.state.firstName} id="firstName" onChange={this.handleFirstName.bind(this)}/>
+            <Form.Field control={Input} label='Last name' placeholder='Last name' 
+                        value={this.state.lastName} id="lastName" onChange={this.handleLastName.bind(this)} />
             <Form.Field control={Select} label='Gender' options={genderOptions} placeholder='Gender' />
           </Form.Group>
           <br/>
@@ -102,17 +209,26 @@ export default class AddHouseDetail extends Component {
           <Form.Field control={Checkbox} label='Smoking prefence' />
           <Form.Field control={Checkbox} label='Drinking preference' />
           <br/>
-          <Form.Field control={TextArea} label='About you' placeholder='Tell us more about you...' />
+          <Form.Field control={TextArea} label='About this house' placeholder='Tell us more about this house...'
+                      name='description' value={this.state.description} onChange={this.handleDescription.bind(this)} />
           <Form.Field control={Checkbox} label='I agree to the Terms and Conditions' />
           <br/>
           <Divider />
           <br/>
-          <Form.Field control={Input} label='Address' placeholder='Type in full address' />
+          <div className="fileInputField">
+            <h3>Upload the image of your house</h3>
+            <input type="file" placeholder='Upload picture' onChange={this.handlePreviewPicture.bind(this)} />
+          </div>  
+          <Form.Field control={Input} label='Address' name='address' placeholder='Type in full address'
+                      value={this.state.address} id="address" onChange={this.handleAddress.bind(this)} />
 
-          <Form.Field control={Input} label='Rent per week' placeholder='Rent per week' />
-          <Form.Field control={Input} label='Availability' placeholder='DD/MM/YYY' />
+          <Form.Field control={Input} label='Rent per week' placeholder='Rent per week' name='weeklyRate'
+                      value={this.state.weeklyRate} id="weeklyRate" onChange={this.handleWeeklyRate.bind(this)} />
+          <Form.Field control={Input} label='Availability' placeholder='DD/MM/YYY'  name='availability'
+                      value={this.state.availability} id="availability" onChange={this.handleAvailability.bind(this)}/>
 
-          <Form.Field control={Select} multiple label='Chores' options={choreOptions} placeholder='What chores would you like to get help with?' />
+          <Form.Field control={Select} multiple label='Chores' options={choreOptions} placeholder='What chores would you like to get help with?'
+                      id="chores" onChange={this.handleAcceptedChores.bind(this)} />
 
           <Form.Field control={Select} label='Number of Rooms' options={roomOptions} placeholder='Number of Rooms' />
           <Form.Field control={Select} multiple label='Utility Bills' options={utilityOptions} placeholder='Which utility bills would the student need to pay for?' />
@@ -120,8 +236,10 @@ export default class AddHouseDetail extends Component {
 
           <br/>
           <br/>
-          <Button positive floated='left'>Confirm</Button>
-          <Button floated='right'>Cancel</Button>
+          <Button positive floated='left' onClick={this.submitForm.bind(this)}>Confirm</Button>
+          <Link to='/'>
+            <Button floated='right'>Cancel</Button>
+          </Link>  
           <br/>
           <br/>
           <br/>

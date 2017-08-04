@@ -85,7 +85,7 @@ export default class HousePreview extends Component {
           </Card>
         
         </Segment>
-      </Link>
+      </Link> 
     )
   }
 }
