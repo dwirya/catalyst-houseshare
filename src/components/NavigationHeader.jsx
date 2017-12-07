@@ -13,7 +13,7 @@ export default class NavigationHeader extends Component {
     const { activeItem } = this.state
 
       return(
-        <Menu secondary stackable widths={5}>
+        <Menu secondary stackable widths={6}>
           <Menu.Item>
             <Image src = {logo2} size = 'tiny' />
           </Menu.Item>
@@ -33,7 +33,7 @@ export default class NavigationHeader extends Component {
             name='find-a-place'
             active={activeItem === 'find-a-place'}
             onClick={this.handleItemClick}
-            href='/browse'
+            href='/house/browse'
           >
             Find A Place
           </Menu.Item>
@@ -44,7 +44,7 @@ export default class NavigationHeader extends Component {
             name='list-a-place'
             active={activeItem === 'list-a-place'}
             onClick={this.handleItemClick}
-            href='/add'
+            href='/house/register'
           >
             List A Place
           </Menu.Item>
@@ -55,9 +55,19 @@ export default class NavigationHeader extends Component {
             name='sign-up'
             active={activeItem === 'sign-up'}
             onClick={this.handleItemClick}
-            href='/student'
+            href='/student/register'
           >
-            Sign-up
+            Sign up
+          </Menu.Item>
+
+          <Menu.Item
+            header
+            name='sign-up'
+            active={activeItem === 'guide'}
+            onClick={this.handleItemClick}
+            href='/about-us'
+          >
+            About us
           </Menu.Item>
 
         </Menu>

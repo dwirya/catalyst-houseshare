@@ -6,6 +6,16 @@ import { Grid, Dropdown } from 'semantic-ui-react';
 
 import { updateConcession } from '../actions/updateConcession';
 
+import {
+    HOUSEKEEPING,
+    WASHINGDISHES,
+    WASHINGCLOTHES,
+    WASHINGTOILET,
+    COOKING,
+    GROCERY,
+    GARDENING
+} from '../reducers/reducer_all_houses';
+
 /*const roomOptions = [
   { key: 1, text: '1', value: 1 },
   { key: 2, text: '2', value: 2 },
@@ -28,32 +38,27 @@ const locationOptions = [
   { key: 4, text: 'Sorrento', value: 'Sorrento' },
 ]
 
-export const HOUSEKEEPING = 'Housekeeping';
-export const CLEANING_DISHES = 'Cleaning dishes';
-export const CLEANING_TOILETS = 'Cleaning toilets';
-export const COOKING = 'Cooking';
-
 const choreOptions = [
   { key: 1, text: HOUSEKEEPING, value: HOUSEKEEPING },
-  { key: 2, text: CLEANING_DISHES, value: CLEANING_DISHES },
-  { key: 3, text: CLEANING_TOILETS, value: CLEANING_TOILETS },
-  { key: 4, text: COOKING, value: COOKING, },
+  { key: 2, text: WASHINGDISHES, value: WASHINGDISHES },
+  { key: 3, text: WASHINGCLOTHES, value: WASHINGCLOTHES },
+  { key: 4, text: WASHINGTOILET, value: WASHINGTOILET },
+  { key: 5, text: COOKING, value: COOKING },
+  { key: 6, text: GROCERY, value: GROCERY },
+  { key: 7, text: GARDENING, value: GARDENING }
 ]
+
 
 class FilterHeaders extends Component {
     constructor(props, context) {
         super(props, context);
         this.handleConcession = this.handleConcession.bind(this);
-        this.printLabel = this.printLabel.bind(this);
     }
 
     handleConcession(event, { value }) {
         this.props.updateConcession(value);
     }
 
-    printLabel(event, { value }) {
-        console.log(value);
-    }
 
     render() {
         return(
@@ -78,9 +83,10 @@ class FilterHeaders extends Component {
                                   multiple
                                   fluid
                                   selection
+                                  closeOnChange
+                                  value={this.props.selectedChores}
                                   options={choreOptions}
                                   onChange={this.handleConcession}
-                                  onClick={this.printLabel}
                         />
                     </Grid.Column>
                 </Grid.Row>
@@ -91,7 +97,8 @@ class FilterHeaders extends Component {
 
 function mapStateToProps(state) {
     return {
-        houses: state.houses
+        houses: state.houses,
+        selectedChores: state.selectedChores
     }
 }
 

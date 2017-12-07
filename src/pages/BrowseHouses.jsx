@@ -18,7 +18,6 @@ export default class BrowseHouses extends Component {
               <FilterHeaders />
               <HouseList />
             </Grid.Column>
-            
           </Grid>
         </Container>  
       </div>

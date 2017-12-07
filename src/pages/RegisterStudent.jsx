@@ -5,7 +5,7 @@ import NavigationHeader from '../components/NavigationHeader';
 import StudentRegisterDetail from '../containers/StudentRegisterDetail';
 
 
-export default class StudentRegister extends Component {
+export default class RegisterStudent extends Component {
   render() {
     return (
       <div>
@@ -15,7 +15,6 @@ export default class StudentRegister extends Component {
           <StudentRegisterDetail />
         </Container>
       </div>
-
     )
   }
 };

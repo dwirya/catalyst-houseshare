@@ -14,9 +14,9 @@ class HouseList extends Component {
     renderList() {
         return this.props.houses.map((house) => {
             return (
-                <Grid.Column>
+                <Grid.Column key={house.slug}>
                     <div>
-                    <HousePreview house={house} concession={this.props.concession} />
+                    <HousePreview house={house} selectedChores={this.props.selectedChores} />
                     </div>  
                 </Grid.Column>
             )
@@ -35,13 +35,9 @@ class HouseList extends Component {
 function mapStateToProps(state) {
     return {
         houses: state.houses,
-        concession: state.concession
+        selectedChores: state.selectedChores
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators( { selectHouse: selectHouse }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HouseList);
+export default connect(mapStateToProps)(HouseList);
 

@@ -5,7 +5,7 @@ import NavigationHeader from '../components/NavigationHeader';
 import AddHouseDetail from '../containers/AddHouseDetail';
 
 
-export default class AddHouse extends Component {
+export default class RegisterHouse extends Component {
   render() {
     return (
       <div>
@@ -15,7 +15,6 @@ export default class AddHouse extends Component {
           <AddHouseDetail />
         </Container>
       </div>
-
     )
   }
 };

@@ -178,9 +178,8 @@ export default class AddHouseDetail extends Component {
   // }
 
   submitForm(event) {
-    document.getElementById("ListingForm").submit();
+    // document.getElementById("ListingForm").submit();
     event.preventDefault();
-    console.log(this.state.previewPicture);
   }
 
   render() {
